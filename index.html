@@ -698,6 +698,50 @@
     .card-feat .c-name { font-size: 19px; }
     @media (max-width: 860px) { .card-feat { grid-column: span 1; } }
 
+    /* Dual links (live web + source) inside a non-anchor card */
+    .card-links {
+      display: flex;
+      flex-direction: column;
+      text-decoration: none;
+      color: inherit;
+      cursor: default;
+    }
+    .c-links {
+      display: flex;
+      gap: 8px;
+      padding-top: 14px;
+      margin-top: auto;
+      border-top: 1px solid var(--rule);
+    }
+    .c-link {
+      font-family: 'Geist Mono', monospace;
+      font-size: 11px;
+      line-height: 1;
+      text-decoration: none;
+      padding: 6px 11px;
+      border-radius: 5px;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      border: 1px solid var(--rule-2);
+      transition: background 0.15s ease, color 0.15s ease, border-color 0.15s ease;
+    }
+    .c-link .c-link-arrow { transition: transform 0.12s ease; }
+    .c-link:hover .c-link-arrow { transform: translate(2px,-2px); }
+    /* Web / live link — accent (primary) */
+    .c-link-web {
+      color: var(--accent);
+      background: var(--accent-d);
+      border-color: var(--accent-g);
+    }
+    .c-link-web:hover { background: var(--accent-g); }
+    /* Source / GitHub link — neutral (secondary) */
+    .c-link-gh {
+      color: var(--mid);
+      background: var(--subtle);
+    }
+    .c-link-gh:hover { color: var(--ink); border-color: var(--rule-2); }
+
     /* ═══ CALLOUT ════════════════════════════════════════════════════ */
     .callout {
       display: grid;
@@ -881,7 +925,7 @@
     </div>
     <div class="grid">
 
-      <a class="card" href="https://github.com/jalonsogo/tui-studio" target="_blank" rel="noopener">
+      <div class="card card-links">
         <div class="c-preview">
           <img src="https://raw.githubusercontent.com/jalonsogo/tui-studio-landing/main/screenshots/landing-preview.png" alt="tui-studio preview" loading="lazy">
         </div>
@@ -892,17 +936,20 @@
               <span class="c-badge">Featured</span>
               <div class="c-name">tui-studio</div>
             </div>
-            <span class="c-arrow">↗</span>
           </div>
           <p class="c-desc">Visual design tool for building Terminal User Interfaces. Drag-and-drop TUI layout designer that brings design tooling to the terminal aesthetic.</p>
           <div class="c-foot">
             <span class="c-tag">TypeScript</span>
             <span class="c-stars">★ 1,386</span>
           </div>
+          <div class="c-links">
+            <a class="c-link c-link-web" href="https://tui.studio" target="_blank" rel="noopener">tui.studio <span class="c-link-arrow">↗</span></a>
+            <a class="c-link c-link-gh" href="https://github.com/jalonsogo/tui-studio" target="_blank" rel="noopener">GitHub <span class="c-link-arrow">↗</span></a>
+          </div>
         </div>
-      </a>
+      </div>
 
-      <a class="card" href="https://github.com/jalonsogo/oscar" target="_blank" rel="noopener">
+      <div class="card card-links">
         <div class="c-preview">
           <img src="https://raw.githubusercontent.com/jalonsogo/oscar-landing/main/screens/new%20chat.png" alt="oscar app" loading="lazy">
         </div>
@@ -913,15 +960,18 @@
               <span class="c-badge">Featured</span>
               <div class="c-name">oscar</div>
             </div>
-            <span class="c-arrow">↗</span>
           </div>
           <p class="c-desc">Operating System for Cognitive Agent Runtime. Native macOS menu bar app for docker/cagent. Runtime control for AI agents from the status bar.</p>
           <div class="c-foot">
             <span class="c-tag">Swift</span>
             <span class="c-stars">★ 0</span>
           </div>
+          <div class="c-links">
+            <a class="c-link c-link-web" href="https://jalonsogo.github.io/oscar/" target="_blank" rel="noopener">Website <span class="c-link-arrow">↗</span></a>
+            <a class="c-link c-link-gh" href="https://github.com/jalonsogo/oscar" target="_blank" rel="noopener">GitHub <span class="c-link-arrow">↗</span></a>
+          </div>
         </div>
-      </a>
+      </div>
 
       <a class="card" href="https://github.com/jalonsogo/ProteOS" target="_blank" rel="noopener">
         <div class="c-preview">
@@ -959,7 +1009,7 @@
         </div>
       </a>
 
-      <a class="card" href="https://github.com/jalonsogo/tinyd" target="_blank" rel="noopener">
+      <div class="card card-links">
         <div class="c-preview contain">
           <img src="https://raw.githubusercontent.com/jalonsogo/tinyd/main/.github/assets/logo-dark.png" alt="tinyd logo" loading="lazy">
         </div>
@@ -967,15 +1017,18 @@
           <div class="c-idx">005</div>
           <div class="c-top">
             <div class="c-name">tinyd</div>
-            <span class="c-arrow">↗</span>
           </div>
           <p class="c-desc">Tiny Docker Desktop TUI. Lightweight terminal interface for Docker. Manage containers without ever leaving the terminal.</p>
           <div class="c-foot">
             <span class="c-tag">Go</span>
             <span class="c-stars">★ 2</span>
           </div>
+          <div class="c-links">
+            <a class="c-link c-link-web" href="https://jalonsogo.github.io/tinyd/" target="_blank" rel="noopener">Website <span class="c-link-arrow">↗</span></a>
+            <a class="c-link c-link-gh" href="https://github.com/jalonsogo/tinyd" target="_blank" rel="noopener">GitHub <span class="c-link-arrow">↗</span></a>
+          </div>
         </div>
-      </a>
+      </div>
 
       <a class="card" href="https://github.com/jalonsogo/harbourmaster" target="_blank" rel="noopener">
         <div class="c-preview">
