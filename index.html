@@ -698,13 +698,25 @@
     .card-feat .c-name { font-size: 19px; }
     @media (max-width: 860px) { .card-feat { grid-column: span 1; } }
 
-    /* Dual links (live web + source) inside a non-anchor card */
+    /* Dual links (live web + source) inside a non-anchor card.
+       Whole card clicks through to the website (stretched web link);
+       the GitHub button sits above the overlay so it stays clickable. */
     .card-links {
       display: flex;
       flex-direction: column;
       text-decoration: none;
       color: inherit;
-      cursor: default;
+      cursor: pointer;
+    }
+    .card-links .c-link-web::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      z-index: 1;
+    }
+    .card-links .c-link-gh {
+      position: relative;
+      z-index: 2;
     }
     .c-links {
       display: flex;
